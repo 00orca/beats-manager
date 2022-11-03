@@ -2,7 +2,7 @@ import os
 import time
 import shutil
 
-my_path = "C:/Users/liban/Documents/Image-Line/FL Studio/Projects/"
+my_path = "your_path"
 
 files_list = os.listdir(my_path)
 
