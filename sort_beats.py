@@ -17,12 +17,19 @@ for file in files_list:
     file_path = my_path + file
     file_creation_date = time.localtime(os.path.getctime(file_path))
 
+    # create the year folder if it doesn't exist
+
     if (not os.path.exists(my_path + str(file_creation_date.tm_year))):
         print(os.path.exists(my_path + str(file_creation_date.tm_year)))
         os.mkdir(my_path + str(file_creation_date.tm_year))
+
+    # create the month folder if it doesn't exist
+
     if(not os.path.exists(my_path + "/" + str(file_creation_date.tm_year) + "/" + month_str(file_creation_date.tm_mon))):
         os.mkdir(my_path + "/" + str(file_creation_date.tm_year) + "/" + month_str(file_creation_date.tm_mon))
     
+    # move file in the newly created folders except if it is the newly created folder 
+
     if(file_path != my_path + str(file_creation_date.tm_year)):
         shutil.move(file_path, my_path + "/" + str(file_creation_date.tm_year) + "/" + month_str(file_creation_date.tm_mon))
 
