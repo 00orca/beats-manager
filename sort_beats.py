@@ -17,6 +17,9 @@ for file in files_list:
     file_path = my_path + file
     file_creation_date = time.localtime(os.path.getctime(file_path))
 
+    # add exception for certain file
+    exception_files = ['Backup','Templates','Project bones']
+
     # create the year folder if it doesn't exist
 
     if (not os.path.exists(my_path + str(file_creation_date.tm_year))):
@@ -30,11 +33,9 @@ for file in files_list:
     
     # move file in the newly created folders except if it is the newly created folder 
 
-    if(file_path != my_path + str(file_creation_date.tm_year)):
+    if(file_path != my_path + str(file_creation_date.tm_year) or file not in exception_files):
         shutil.move(file_path, my_path + "/" + str(file_creation_date.tm_year) + "/" + month_str(file_creation_date.tm_mon))
 
-# add exception for certain file
-# expection_files = ['Backup','Templates','Project bones']
         
 
 print("fin")
