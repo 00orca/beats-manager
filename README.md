@@ -1,5 +1,5 @@
 # beats-manager
-small lil project to get better with python
+lil project to get better with python (and git)
 
 Quick little script to sort your beats by year and month in folders
 
