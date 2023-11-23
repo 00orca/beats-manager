@@ -11,8 +11,6 @@ my_path = "C:/Users/liban/Documents/Image-Line/FL Studio/Projects/"
 
 files_list = os.listdir(my_path)
 
-# print (files_list)
-
 for file in files_list:
     file_path = my_path + file
     file_creation_date = time.localtime(os.path.getctime(file_path))
@@ -36,6 +34,5 @@ for file in files_list:
     if(file_path != my_path + str(file_creation_date.tm_year) or file not in exception_files):
         shutil.move(file_path, my_path + "/" + str(file_creation_date.tm_year) + "/" + month_str(file_creation_date.tm_mon))
 
-        
 
 print("fin")
